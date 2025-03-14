@@ -60,9 +60,12 @@ if __name__ == '__main__':
     # Generate 'n' random passwords
     print('How many passwords do you want to generate?')
     n = int(input('Enter a number : '))
+    #Length of the passwords
+    print('What should be the length of your password(s)?')
+    len_of_pass = int(input('Enter a number : '))
     seq = (range(1, n + 1))
     for i in seq:
-        new_pass: str = generate_password(length=15, symbols=True, uppercase=True)
+        new_pass: str = generate_password(length=len_of_pass, symbols=True, uppercase=True)
         specs: str = f'U: {contains_upper(new_pass)}, S: {contains_symbols(new_pass)}'
 
         print(f'{i} -> {new_pass} ({specs})')
